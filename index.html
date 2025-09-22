@@ -1,17 +1,94 @@
 <!DOCTYPE html>
-
 <html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabrouk BEN JABA - Page personnelle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Mabrouk BEN JABA</title>
-        <link href="FichierCSS.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Page en construction</h1>
-        <p>Mabrouk BEN JABA </p>
-     </body>
+  <!-- Barre de progression -->
+  <div id="progress-bar"></div>
+
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Mabrouk BEN JABA</h1>
+        <p>Doctorant contractuel, agrégé de mathématiques</p>
+      </div>
+      <div class="language-flags">
+        <a href="https://mabroukbenjaba.github.io" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" title="Français" />
+        </a>
+        <a href="https://mabroukbenjaba-github-io.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" title="English" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="enseignement.html">Enseignement</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="concours.html">Concours écrit prépa</a></li>
+      <li><a href="liens.html">Liens</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="accueil">
+      <h2>Bienvenue !</h2>
+      <br>
+      <p>Je suis actuellement en 3ème année de doctorat en mathématiques à l'IECL. J'effectue également mon service d'enseignement à l'école des Mines de Nancy.</p>
+      <br>
+      <br>
+      <p>Sur cette page, vous trouverez :
+      <ul>
+      <li>des informations sur mes enseignements dans l'onglet Enseignement</li>
+      <li>des informations sur ma recherche dans l'onglet Recherche</li>
+      <li>des corrections de sujet écrit de concours dans l'onglet Concours écrit prépa</li>
+      <li>des liens pertinents dans l'onglet Liens</li>
+      <li>des informations sur mon parcours dans l'onglet CV</li>
+      </ul>  
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &loz; Page personnelle de Mabrouk BEN JABA
+      <span class="last-modified"></span>
+    </p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Barre de progression scroll
+    window.addEventListener("scroll", () => {
+      const progressBar = document.getElementById("progress-bar");
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + "%";
+    });
+
+    // Date de dernière modification
+    const lastModifiedSpan = document.querySelector(".last-modified");
+    const lastModified = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastModifiedSpan.textContent = "(Dernière modification : " + lastModified.toLocaleDateString('fr-FR', options) + ")";
+  </script>
+
+</body>
 </html>
