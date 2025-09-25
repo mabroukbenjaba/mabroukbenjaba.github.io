@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabrouk BEN JABA - Page personnelle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre de progression -->
+  <div id="progress-bar"></div>
+
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Mabrouk BEN JABA</h1>
+        <p>Doctorant contractuel, agrégé de mathématiques</p>
+      </div>
+      <div class="language-flags">
+        <a href="https://mabroukbenjaba.github.io" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" title="Français" />
+        </a>
+        <a href="https://mabroukbenjaba-github-io.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" title="English" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="enseignement.html">Enseignement</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="concours.html">Corrections Écrits CPGE</a></li>
+      <li><a href="liens.html">Liens</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="autre-section">
+      <h2>Recherche</h2>
+      <br>
+    Depuis octobre 2023, j'effectue une thèse (financée par l'INRIA), intitulée <i>Modélisation du transfert de dioxygène dans le poumon humain, une approche “contrôle optimal”</i>, sous la direction de <a href="https://scheid.perso.math.cnrs.fr/">Jean-François SCHEID</a>, <a href="https://yannick-privat.perso.math.cnrs.fr/">Yannick PRIVAT</a> et <a href="https://codimd.math.cnrs.fr/s/lTNwijNZo#">Zakaria BELHACHMI</a>.
+    <br>
+    <br>
+    Le détail de mes activités de recherche se trouve ci-dessous.
+    <br>
+    <div class="titre-sous-section">
+    Thème de recherche
+    </div>
+    <img src="https://img.passeportsante.net/1200x675/2021-05-03/i103543-poumons.jpg" alt="Poumons">  
+    <br>
+    Je travaille actuellement sur des modèles mathématiques du poumon avec un point de vue contrôle optimal. Notre approche repose sur l’hypothèse selon laquelle les échanges gazeux sont optimisés pour maximiser l’efficacité du poumon, en accord avec des principes tels que la théorie de l’évolution.
+    <br>
+    <br>
+  Dans la littérature, on trouve diverses modélisations du poumon humain et de son fonctionnement, notamment des modèles très complets reposant sur des équations aux dérivées partielles complexes. Leur résolution doit être effectuée à différentes échelles, car l’arbre bronchique présente une géométrie de type fractal.
+  <br>
+  <br>
+  Une alternative à cette modélisation consiste à essayer de réaliser des modèles prenant en compte l’arbre bronchique dans son intégralité. L'objectif de ma thèse est de réaliser une étude de ces modèles, de les enrichir et les compléter à l’aide d’une approche “contrôle optimal”.
+    <div class="titre-sous-section">
+    Exposés scientifiques
+    </div>
+    <ul>
+      <li>Modélisation mécanique du transfert de dioxygène dans le poumon humain : une approche “contrôle optimal”, <a href="https://smai2025.math.cnrs.fr/programme/soumission/cafae2cf-46db-4379-b379-b9622b0e5cc6/presentation.pdf">Congrès SMAI</a> (Carcans-Maubuisson, juin 2025)  </li>
+      <li>Quelques problèmes historiques d’optimisation, revisités grâce à la théorie du contrôle optimal, <a href="https://math.univ-angers.fr/seminaires/">Séminaire des doctorants de LAREMA</a> (Angers, février 2025) </li>
+      <li>Quelques problèmes historiques d’optimisation, revisités grâce à la théorie du contrôle optimal, <a href="https://iecl.univ-lorraine.fr/events/introduction-a-la-theorie-du-controle-optimal/">Séminaire des doctorants de l'IECL</a> (Nancy, janvier 2025) </li>  
+      <li>The Distribution of Prime Numbers through Complex Analysis, <a href="https://days.matheor.com/2024/program.html">MAThEOR
+Days 2024</a> (Sainte-Marie-aux-Mines, juillet 2024) </li>    
+    </ul>    
+<!-- 
+
+-->
+
+
+
+<!-- Ceci est un commentaire 
+    <div class="titre-sous-section">
+    Publication
+    </div>
+-->
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &loz; Page personnelle de Mabrouk BEN JABA
+    </p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Barre de progression scroll
+    window.addEventListener("scroll", () => {
+      const progressBar = document.getElementById("progress-bar");
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + "%";
+    });
+
+    // Date de dernière modification
+    const lastModifiedSpan = document.querySelector(".last-modified");
+    const lastModified = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastModifiedSpan.textContent = "(Dernière modification : " + lastModified.toLocaleDateString('fr-FR', options) + ")";
+  </script>
+
+</body>
+</html>

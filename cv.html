@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabrouk BEN JABA - Page personnelle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre de progression -->
+  <div id="progress-bar"></div>
+
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Mabrouk BEN JABA</h1>
+        <p>Doctorant contractuel, agrégé de mathématiques</p>
+      </div>
+      <div class="language-flags">
+        <a href="https://mabroukbenjaba.github.io" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" title="Français" />
+        </a>
+        <a href="https://mabroukbenjaba-github-io.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" title="English" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="enseignement.html">Enseignement</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="concours.html">Corrections Écrits CPGE</a></li>
+      <li><a href="liens.html">Liens</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="autre-section">
+      <h2>CV</h2>
+    <!-- 
+    
+    Quelques éléments synthétiques de mon CV se trouvent ci-dessous.
+    <br>      
+-->
+    <div class="titre-sous-section">
+    Formation universitaire
+    </div>
+        <ul>
+          <li>Doctorat de Mathématiques (depuis octobre 2023).</li>
+          <li>Master 2 Recherche de Mathématiques : Équation aux dérivées partielles, Optimisation et Données à l'Université de Strasbourg (2022 - 2023).</li>
+          <li>Agrégation externe de Mathématique, option Calcul Scientifique (2022).</li>
+          <li>Magistère de Mathématiques à l'Université de Strasbourg (2019 - 2023).</li>
+          <li> “Double-licence” Mathématiques et Physiques Approfondies à l'Université de Strasbourg (2017 - 2019).      </li>
+        </ul>
+    <div class="titre-sous-section">
+    Responsabilité
+    </div>     
+    <ul>
+      <li>Co-organisateur d'un <a href="https://yannick-privat.perso.math.cnrs.fr/conf_poumon.html">workshop autour de la modélisation du poumon</a> à l'IRIMAS, Mulhouse avec <a href="https://codimd.math.cnrs.fr/s/lTNwijNZo#">Zakaria BELHACHMI</a>, <a href="http://benjamin.mauroy.free.fr/">Benjamin MAUROY</a>, <a href="https://yannick-privat.perso.math.cnrs.fr/">Yannick PRIVAT</a>, <a href="https://scheid.perso.math.cnrs.fr/">Jean-François SCHEID</a> (octobre 2025).</li>
+      <li>Co-responsable du <a href="https://iecl.univ-lorraine.fr/evenements-2/doctorants/">séminaire des doctorants de l'IECL</a> avec Rodolphe ABOU ASSALI, Nathan GILLOT, Amine IGGIDR, Aurélien MINGUELLA (depuis septembre 2024).</li>
+      <li>Membre élu au conseil du laboratoire de l'IECL pour représenter les doctorants (depuis février 2024).</li>
+    </ul>
+    <div class="titre-sous-section">
+    Encadrement
+    </div>     
+    Encadrement de plusieurs projets à Mines Nancy, plusieurs TER à la FST Nancy et un stage à Télécom Nancy.    
+    <div class="titre-sous-section">
+    Médiation scientifique
+    </div> 
+    <ul>
+      <li> Atelier <a href="https://www.mathenjeans.fr/content/Mabrouk-Ben-Jaba">MATh.en.JEANS</a> avec <a href="https://irma.math.unistra.fr/~lefloch/">Yohann LE FLOCH</a> (2024-2025 et 2025-2026).</li>
+      <li>Atelier <a href="https://filles-et-maths.fr/evenements/rjmi-universite-de-strasbourg-du-10-au-12-avril-2025/">Rendez-vous des Jeunes Mathématiciennes et Informaticiennes</a> avec <a href="https://louise-martineau.github.io">Louise MARTINEAU </a> (avril 2024 et avril 2025).</li>
+      <li>Jury régional pour le <a href="https://tfjm.org/edition-2025/">Tournois Français des Jeunes Mathématiciennes et Mathématiciens</a> (mai 2025).</li>
+    </ul>
+    </section>
+  </main>
+  <footer>
+    <p>
+      &loz; Page personnelle de Mabrouk BEN JABA
+    </p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Barre de progression scroll
+    window.addEventListener("scroll", () => {
+      const progressBar = document.getElementById("progress-bar");
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + "%";
+    });
+
+    // Date de dernière modification
+    const lastModifiedSpan = document.querySelector(".last-modified");
+    const lastModified = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastModifiedSpan.textContent = "(Dernière modification : " + lastModified.toLocaleDateString('fr-FR', options) + ")";
+  </script>
+
+</body>
+</html>

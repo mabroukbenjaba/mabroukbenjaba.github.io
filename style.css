@@ -264,3 +264,29 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.45);
       transform: translateY(-4px);
     }
+
+.titre-sous-section {
+  text-align: center;          /* centre le texte à l’intérieur */
+  margin: 50px auto;           /* centre le bloc horizontalement */
+  width: fit-content;          /* largeur qui s’adapte au texte */
+  padding: 15px 30px;          /* espace intérieur */
+  border: 2px solid #ff6464;      /* bordure autour */
+  border-radius: 10px;         /* angles arrondis */
+  background-color: #f9f9f9;   /* fond clair */
+  font-size: 1.2em;             /* taille du texte */
+  font-family: Arial, sans-serif ; /* police */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2); /* petite ombre */
+  color : #ff6464;
+}
+
+section a:hover {
+  background-color: yellow;   /* met un fond jaune quand on survole */
+}
+ 
+section  img {
+    width: 50%;      /* l’image prend toute la largeur de l’écran */
+    height: auto;     /* garde les proportions (pas étirée) */
+    display: block;   /* évite le petit espace en bas */
+    border-radius: 10px;        /* arrondir les coins */
+    margin: 0 auto;
+  }
