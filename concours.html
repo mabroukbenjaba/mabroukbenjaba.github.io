@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabrouk BEN JABA - Page personnelle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre de progression -->
+  <div id="progress-bar"></div>
+
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Mabrouk BEN JABA</h1>
+        <p>Doctorant contractuel, agrégé de mathématiques</p>
+      </div>
+      <div class="language-flags">
+        <a href="https://mabroukbenjaba.github.io" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" title="Français" />
+        </a>
+        <a href="https://mabroukbenjaba-github-io.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" title="English" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="enseignement.html">Enseignement</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="concours.html">Corrections Écrits CPGE</a></li>
+      <li><a href="liens.html">Liens</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="autre-section">
+      <h2>Corrections Écrits CPGE</h2>
+      <br>
+    Quelques propositions de corrigés de concours écrits CPGE se trouvent ci-dessous.
+    <br>
+    <br>
+    <u>Remarque :</u> Les sujets du concours commun Mines-Ponts se trouvent <a href="https://concoursminesponts.fr/annales/">ici</a>.
+    <br>
+    <div class="titre-sous-section">
+    2025
+    </div>
+    <strong>Concours Commun Mines-Ponts</strong> (épreuve de mathématiques)
+    <br>
+    <br>
+    <ul>
+      <li><a href="2025_PSI_sujet2_corrige.pdf">Sujet 2 PSI : Modèle SIR pour la propagation d’épidémie et séries de Dirichlet</a></li>    
+      <li>[A VENIR] Sujet 2 PC : Étude des séries congruo-harmoniques alternées</li>
+    </ul>
+
+    <div class="titre-sous-section">
+    2024
+    </div> 
+    <strong>Concours Commun Mines-Ponts</strong> (épreuve de mathématiques) 
+    <br>
+    <br>
+    <ul>
+      <li><a href="2024_PC_PSI_sujet1_corrige.pdf">Sujet 1 PSI : Inégalité de log-Sobolev pour la gaussienne</a></li>   
+      <li><a href="2024_PSI_sujet2_corrige.pdf">Sujet 2 PSI : Étude de marche aléatoire</a></li>         
+      <li><a href="2024_PC_PSI_sujet1_corrige.pdf">Sujet 1 PC : Inégalité de log-Sobolev pour la gaussienne</a></li>      
+      <li><a href="2024_PC_sujet2_corrige.pdf">Sujet 2 PC : Problème inverse pour les matrices de distance euclidienne</a></li>   
+      <li><a href="2024_MP_MPI_sujet1_corrige.pdf">Sujet 1 MP : Généralisation d’une intégrale de Dirichlet et application</a> </li>               
+      <li><a href="2024_MP_MPI_sujet2_corrige.pdf">Sujet 2 MP : Phénomènes de seuil dans les graphes (Partie I et II)</a> </li>
+      <li><a href="2024_MP_MPI_sujet1_corrige.pdf">Sujet 1 MPI : Généralisation d’une intégrale de Dirichlet et application</a> </li>       
+      <li><a href="2024_MP_MPI_sujet2_corrige.pdf">Sujet 2 MPI : Phénomènes de seuil dans les graphes (Partie I et II)</a> </li>      
+    </ul>
+<!-- Ceci est un commentaire 
+
+    <div class="titre-sous-section">
+    Années ultérieures
+    </div>
+Quelques corrections (manuscrites !) que j'ai pu transmettre lors des cours particuliers se trouvent ci-dessous.
+<br>
+<br>
+    <ul>
+      <li>S</li>
+    </ul>
+-->    
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &loz; Page personnelle de Mabrouk BEN JABA
+    </p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Barre de progression scroll
+    window.addEventListener("scroll", () => {
+      const progressBar = document.getElementById("progress-bar");
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + "%";
+    });
+
+    // Date de dernière modification
+    const lastModifiedSpan = document.querySelector(".last-modified");
+    const lastModified = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastModifiedSpan.textContent = "(Dernière modification : " + lastModified.toLocaleDateString('fr-FR', options) + ")";
+  </script>
+
+</body>
+</html>
